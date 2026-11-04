@@ -133,3 +133,6 @@ logoutButton.addEventListener("click", logout);
 
 // Page khulte hi saare messages load karo
 loadMessages();
+
+// Har 2 second mein messages automatically refresh karo
+setInterval(loadMessages, 1000);

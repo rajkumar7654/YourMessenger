@@ -31,9 +31,10 @@ form.addEventListener("submit", function (event) {
         message.className = "success";
         message.textContent = "Login successful! Redirecting...";
         localStorage.setItem("token", data.token);
+        localStorage.setItem("userId", data.userId);
         localStorage.setItem("userName", data.userName);
         setTimeout(function () {
-          window.location.href = "dashboard.html";
+          window.location.href = "chatDashboard.html";
         }, 1500);
       }
     })

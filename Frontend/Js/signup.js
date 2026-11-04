@@ -48,7 +48,7 @@ form.addEventListener("submit", function (event) {
         message.className = "success";
         message.textContent = "Sign up successful! Redirecting to login...";
         setTimeout(function () {
-          window.location.href = "login.html";
+          window.location.href = "index.html";
         }, 1500);
       }
     })

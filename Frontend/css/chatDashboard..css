@@ -61,6 +61,23 @@ body {
   opacity: 0.8;
 }
 
+/* NEW: Logout button (header ke sabse right me) */
+.logout-button {
+  margin-left: auto;      /* baaki sab left me, ye right me */
+  padding: 6px 14px;
+  border: 1px solid white;
+  border-radius: 20px;
+  background: transparent;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background: white;
+  color: #6c5ce7;
+}
+
 /* ---------- 2) Messages area ---------- */
 .messages {
   flex: 1;                /* bachi hui saari jagah le lo */

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YourMessenger</title>
+  <!-- Design wali file yahan jud rahi hai -->
+  <link rel="stylesheet" href="/Frontend/css/chatDashboard..css" />
+</head>
+<body>
+
+  <!-- Poori chat window ka dabba -->
+  <div class="chat">
+
+    <!-- 1) TOP BAR: app ka naam -->
+    <header class="chat-header">
+      <div class="avatar">Y</div>
+      <div>
+        <h1>YourMessenger</h1>
+        <p>online</p>
+      </div>
+    </header>
+
+    <!-- 2) MESSAGES KI LIST: yahan saare messages aayenge -->
+    <main class="messages" id="messageList">
+
+      <!-- Ye 2 messages sirf example hain (left side wale).
+           Inhe delete karna chaho to delete kar do. -->
+      <div class="message received">
+        <p>Hello! Welcome to YourMessenger 👋</p>
+        <span class="time">10:30 AM</span>
+      </div>
+
+      <div class="message received">
+        <p>Neeche message likho aur Send dabao.</p>
+        <span class="time">10:31 AM</span>
+      </div>
+
+    </main>
+
+    <!-- 3) NEECHE KA MESSAGE BOX -->
+    <footer class="message-box">
+      <input type="text" id="messageInput" placeholder="Type a message..." />
+      <button id="sendButton">Send</button>
+    </footer>
+
+  </div>
+
+  <!-- Logic wali file (sabse neeche rakhte hain) -->
+  <script src="/Frontend/Js/chatDashboard.js"></script>
+</body>
+</html>

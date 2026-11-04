@@ -32,25 +32,28 @@ form.addEventListener("submit", function (event) {
     return;
   }
 
-  // Pehle se saved users nikalo
-  let users = JSON.parse(localStorage.getItem("users")) || [];
-
-  // Check karo email ya phone pehle se to nahi hai
-  for (let i = 0; i < users.length; i++) {
-    if (users[i].email === email || users[i].phone === phone) {
-      message.textContent = "Email or phone already registered.";
-      return;
-    }
-  }
-
-  // Naya user save karo
-  users.push({ name: name, email: email, phone: phone, password: password });
-  localStorage.setItem("users", JSON.stringify(users));
-
-  message.className = "success";
-  message.textContent = "Sign up successful! Redirecting to login...";
-
-  setTimeout(function () {
-    window.location.href = "login.html";
-  }, 1500);
+  // Backend API call
+  fetch("http://localhost:3000/signup/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ name, email, password })
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.message === "Email already exists") {
+        message.textContent = "Email already registered.";
+      } else {
+        message.className = "success";
+        message.textContent = "Sign up successful! Redirecting to login...";
+        setTimeout(function () {
+          window.location.href = "login.html";
+        }, 1500);
+      }
+    })
+    .catch(error => {
+      message.textContent = "Error signing up. Please try again.";
+      console.error("Error:", error);
+    });
 });

@@ -3,6 +3,7 @@ const cors = require("cors");
 require("dotenv").config();
 const signupRoutes = require("./routes/signupRoute");
 const loginRoutes = require("./routes/loginRoute");
+const messageRoutes = require("./routes/messageRoute");
 const sequelize = require("./config/db-connection");
 
 const app = express();
@@ -13,8 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/signup", signupRoutes);
 app.use("/login", loginRoutes);
-
-
+app.use("/message", messageRoutes);
 
 app.get("/", (req, res) => {
     res.send("YourMessage Backend is running!");
